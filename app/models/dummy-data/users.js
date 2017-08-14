@@ -33,8 +33,8 @@ const AshokProfile = {
 }
 
 const data = {
-  main: Ashok,
-  profile: AshokProfile
+  user: Ashok,
+  userProfile: AshokProfile
 };
 
 export  default data;

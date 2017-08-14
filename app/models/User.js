@@ -14,9 +14,8 @@ const userSchema = new mongoose.Schema({
   name: {
     type:String,
     required: true,
-    minlength: 5,
     trim: true,
-    validate : /^[\\p{L} .'-]+$/
+    validate : /^[a-zA-Z ]{5,30}$/
   },
   username: {
     type: String,

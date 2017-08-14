@@ -8,11 +8,13 @@
 
 import  mongoose from 'mongoose';
 
+// set the default nodejs promise library for mongosse 
+mongoose.Promise = global.Promise;
+
 // set the options object for MongoDB connection 
 const connectionOptions = {
   useMongoClient: true,
-  poolSize: 10,
-  promiseLibrary: global.Promise
+  poolSize: 10
 }
 
 // connect to the db using mongoose and setpool option to 10 
