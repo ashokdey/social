@@ -32,10 +32,10 @@ const answerSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users'
   }],
-  comments: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Comments'
-  }]
+  createdAt: {
+    type: Date,
+    required: true
+  } 
 });
 
 export default mongoose.model('Answers', answerSchema);

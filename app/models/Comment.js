@@ -15,7 +15,11 @@ const commentSchema = new mongoose.Schema({
   commentedBy: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users'
-  }
+  },
+  createdAt: {
+    type: Date,
+    required: true
+  } 
 });
 
 export default mongoose.model('Comments', commentSchema);
