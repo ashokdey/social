@@ -7,10 +7,12 @@ const questionSchema = new  mongoose.Schema({
   title: {
     type: String,
     required:true,
-    unique:true
+    unique:true,
+    minlength: 10
   },
   description: {
-    type: String
+    type: String,
+    minlength: 5
   },
   by: {
     type: mongoose.Schema.Types.ObjectId,
@@ -26,7 +28,11 @@ const questionSchema = new  mongoose.Schema({
   answers: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Answers'
-  }] 
+  }],
+  subjects: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Subjects'
+  }]
 });
 
 export default mongoose.model('Questions', questionSchema);
