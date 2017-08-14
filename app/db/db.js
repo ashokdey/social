@@ -8,16 +8,15 @@
 
 import  mongoose from 'mongoose';
 
-// set the mongoose promise to use the default ES6 promise 
-mongoose.Promise = global.Promise;
+// set the options object for MongoDB connection 
+const connectionOptions = {
+  useMongoClient: true,
+  poolSize: 10,
+  promiseLibrary: global.Promise
+}
 
 // connect to the db using mongoose and setpool option to 10 
-mongoose.connect(process.env.MONGODB_URI, { 
-  server: {
-    poolSize: 10
-  },
-  useMongoClient: true
-});
+mongoose.connect(process.env.MONGODB_URI, connectionOptions);
 
 // console log on connection to DB
 mongoose.connection.on('connected', () => console.log('Connected to Database'));
