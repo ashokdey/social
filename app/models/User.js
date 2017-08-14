@@ -56,6 +56,15 @@ const userSchema = new mongoose.Schema({
     required: true
   },
   profile: {
+    bio: {
+      type: String,
+      minlength: 5,
+      maxlength: 55
+    },
+    website: {
+      type: String,
+      validate: /@^(http\:\/\/|https\:\/\/)?([a-z0-9][a-z0-9\-]*\.)+[a-z0-9][a-z0-9\-]*$@i/
+    },
     age: {type: Number},
     gender: {type: String, enum: GENDERS},
     image: [{
