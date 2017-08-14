@@ -15,7 +15,8 @@ mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGODB_URI, { 
   server: {
     poolSize: 10
-  }
+  },
+  useMongoClient: true
 });
 
 // console log on connection to DB
