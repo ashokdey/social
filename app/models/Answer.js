@@ -27,6 +27,10 @@ const answerSchema = mongoose.Schema({
   hearts: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Hearts'
+  }],
+  comments: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Comments'
   }]
 });
 
