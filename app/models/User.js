@@ -21,6 +21,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     minlength: 5,
     maxlength: 15,
+    unique: true
   },
   email: {
     type: String,
@@ -31,7 +32,8 @@ const userSchema = new mongoose.Schema({
     validate: {
       validator: function(v) {
         return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
-      }
+      },
+      message: '{VALUE} is not a valid email!'
     }
   },
   password: {
