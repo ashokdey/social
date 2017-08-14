@@ -11,6 +11,7 @@ const AshokProfile = {
   bio: 'I am a fun loving Fullstack JS Developer',
   website: 'http://ashokdey.in',
   age: 23,
+  gender: 'Male',
   images: [{url: 'https://lorem/400/400'}],
   educattion: [{
     type: 'B.Tech',

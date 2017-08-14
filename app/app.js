@@ -4,18 +4,19 @@ import db from './db/db';
 import User from  './models/User';
 import data from './models/dummy-data/users';
 
+const PORT = process.env.PORT;
 const app = express();
 
+let user = data.user;
+user.profile = data.userProfile;
 // try to save data in the DB 
-let demoUser = new User(data.user);
+let demoUser = new User(user);
 demoUser.save()
   .then((data) => console.log(data))
-  .catch((err) => console.log(err.errmsg));
+  .catch((err) => console.log('**Error: ', err));
 
-app.get('/', (req, res) => {
-  res.status(200).json({
-   message: 'Hello User'
-  })
-})
 
-app.listen(4000);
+
+app.listen(PORT, () => {
+  console.log('App running at: http://localhost:', PORT)
+});
