@@ -1,20 +1,43 @@
-const Ashok = {
-  name: 'Ashok Dey',
-  username: 'ashokdey',
-  email:'ashokdey100@gmail.com',
-  password: 'ashokdey',
-  isVerified: true,
-}
+  const usersList = [
+    {
+      name: 'Ashok Dey',
+      username: 'ashokdey',
+      email:'ashokdey100@gmail.com',
+      password: 'ashokdey',
+      isVerified: true,
+    },
+    {
+      name: 'Anup Kumar',
+      username: 'anupkumar',
+      email:'anupkumar@gmail.com',
+      password: 'ashokdey',
+      isVerified: true,
+    },
+    {
+      name: 'Sachin Kumar',
+      username: 'sachinkr',
+      email:'sachinkr100@gmail.com',
+      password: 'ashokdey',
+      isVerified: true,
+    },
+    {
+      name: 'Nikesh Rawani',
+      username: 'nikeshcfri',
+      email:'nikeshcfri100@gmail.com',
+      password: 'ashokdey',
+      isVerified: true,
+    }
+  ];
 
 // profile of user 
-const AshokProfile = {
+const UserProfile = {
   bio: 'I am a fun loving Fullstack JS Developer',
   website: 'http://ashokdey.in',
   age: 23,
   gender: 'Male',
   images: [{url: 'https://lorem/400/400'}],
-  educattion: [{
-    type: 'B.Tech',
+  education: [{
+    educationType: 'B.Tech',
     details: {
       major: 'Computer Science',
       degree: 'Bachelor of Technology',
@@ -34,8 +57,8 @@ const AshokProfile = {
 }
 
 const data = {
-  user: Ashok,
-  userProfile: AshokProfile
+  users: usersList,
+  userProfile: UserProfile
 };
 
 export  default data;
