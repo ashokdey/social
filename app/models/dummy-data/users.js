@@ -32,7 +32,9 @@ const AshokProfile = {
   }]
 }
 
-export  default data = {
+const data = {
   main: Ashok,
   profile: AshokProfile
 };
+
+export  default data;
