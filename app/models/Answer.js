@@ -22,11 +22,15 @@ const answerSchema = mongoose.Schema({
   },
   kudos: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Kudos'
+    ref: 'Users'
   }],
   hearts: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Hearts'
+    ref: 'Users'
+  }],
+  downs: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Users'
   }],
   comments: [{
     type: mongoose.Schema.Types.ObjectId,
