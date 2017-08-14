@@ -20,11 +20,9 @@ const questionSchema = new  mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users'
   }],
-  askOn: {
+  askedOn: {
     type: Date
-  },
-  kudos: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Kudos'
-  }]
+  }
 });
+
+export default mongoose.model('Questions', questionSchema);
