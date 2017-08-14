@@ -42,18 +42,22 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     trim: true
   },
-  followers: {
+  followers: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  following: {
+    ref: 'Users'
+  }],
+  following: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
+    ref: 'Users'
+  }],
   isVerified: {
     type: Boolean,
     required: true
   },
+  questions: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Questions'
+  }],
   profile: {
     bio: {
       type: String,
