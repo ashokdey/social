@@ -22,7 +22,11 @@ const questionSchema = new  mongoose.Schema({
   }],
   askedOn: {
     type: Date
-  }
+  }, 
+  answers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Answers'
+  }] 
 });
 
 export default mongoose.model('Questions', questionSchema);
