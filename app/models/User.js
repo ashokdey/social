@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
   name: {
     type:String,
     required: true,
-    minlength: 8,
+    minlength: 5,
     trim: true,
     validate : /^[\\p{L} .'-]+$/
   },
@@ -67,9 +67,8 @@ const userSchema = new mongoose.Schema({
     },
     age: {type: Number},
     gender: {type: String, enum: GENDERS},
-    image: [{
-      type: String,
-      default: null
+    images: [{
+      url: String
     }],
     education: [{
       type: String,
@@ -96,7 +95,7 @@ const userSchema = new mongoose.Schema({
       from: Date,
       to: Date
     }]
-  }
+  } 
 });
 
 export default mongoose.model('User', userSchema);
