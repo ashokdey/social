@@ -46,22 +46,10 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users'
   }],
-  following: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users'
-  }],
   isVerified: {
     type: Boolean,
     required: true
   },
-  questions: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Questions'
-  }],
-  answers: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Answers'
-  }],
   profile: {
     bio: {
       type: String,
