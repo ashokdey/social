@@ -58,6 +58,10 @@ const userSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Questions'
   }],
+  answers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Answers'
+  }],
   profile: {
     bio: {
       type: String,
