@@ -8,7 +8,7 @@
 // import mongoose to make schema 
 import mongoose from 'mongoose';
 
-const GENDERS = ['Male', 'Female'];
+const GENDERS = ['Male', 'Female', 'Other'];
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -17,11 +17,22 @@ const userSchema = new mongoose.Schema({
     minlength: 8,
     trim: true
   },
+  username: {
+    type: String,
+    minlength: 5,
+    maxlength: 15,
+  },
   email: {
     type: String,
     required:true,
+    unique: true,
     minlength: 5,
-    trim: true
+    trim: true,
+    validate: {
+      validator: function(v) {
+        return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(v);
+      }
+    }
   },
   password: {
     type: String,
@@ -44,6 +55,10 @@ const userSchema = new mongoose.Schema({
   profile: {
     age: {type: Number},
     gender: {type: String, enum: GENDERS},
+    image: [{
+      type: String,
+      default: null
+    }],
     education: [{
       type: String,
       details: {
@@ -72,4 +87,4 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-export default  mongoose.model('User', userSchema);
+export default mongoose.model('User', userSchema);
