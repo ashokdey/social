@@ -89,14 +89,8 @@ const userSchema = new mongoose.Schema({
     }]
   },
   roles: [{
-    role: {
-      type: String,
-      minlength: 3
-    },
-    assignedOn: {
-      type: Date,
-      default:   new Date()
-    }
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Roles'
   }]
 }, {timestamps: true});
 
