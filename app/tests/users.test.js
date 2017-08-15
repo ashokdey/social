@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import expect  from 'expect';
 import Users from '../models/User';
-import db from '../db/db';
 
 /**
  * create a hook to empty the Database berfore 
@@ -29,11 +28,10 @@ describe('Creating Users', () => {
     john.save().then((data) => {
       expect(john.isNew).toBeFalsy();
       done();
-    }).catch((err) => {
-      // console.log(err);
-    });    
-
+    });   
   });
+
+  
 });
 
 
