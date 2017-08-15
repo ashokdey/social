@@ -23,7 +23,7 @@ const followersSchema = new mongoose.Schema({
   }
 });
 
-//  creating compund index
+// creating compund index - similar to composite primary key 
 followersSchema.index({
   followee: 1,
   follower: 1

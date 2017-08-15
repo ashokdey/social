@@ -15,11 +15,7 @@ const subjectSchema = new mongoose.Schema({
   },
   image: {
     type: String
-  },
-  questions: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Questions'
-  }]
-});
+  }
+}, {timestamps: true});
 
 export default mongoose.model('Subjects', subjectSchema);

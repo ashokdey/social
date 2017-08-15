@@ -20,6 +20,7 @@ const questionFollowersSchema = new mongoose.Schema({
   }
 });
 
+// creating compund index - similar to composite primary key 
 questionFollowersSchema.index({
   questionId: 1,
   userId: 1
