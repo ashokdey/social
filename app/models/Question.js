@@ -25,6 +25,6 @@ const questionSchema = new  mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Subjects'
   }]
-});
+}, {timestamps: true});
 
 export default mongoose.model('Questions', questionSchema);
