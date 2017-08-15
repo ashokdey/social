@@ -21,8 +21,7 @@ describe('Creating Users', () => {
       name: 'Jhon Doe',
       username: 'jhondoe',
       email:'jhondoe@gmail.com',
-      password: 'jhondoe',
-      isVerified: true
+      password: 'jhondoe'
     });
     
     john.save().then((data) => {

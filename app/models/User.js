@@ -13,7 +13,7 @@ const GENDERS = ['Male', 'Female', 'Other'];
 const userSchema = new mongoose.Schema({
   name: {
     type:String,
-    required: true,
+    required: [true, 'Name cannot be blank'],
     trim: true,
     validate : /^[a-zA-Z ]{5,30}$/
   },
@@ -21,11 +21,12 @@ const userSchema = new mongoose.Schema({
     type: String,
     minlength: 5,
     maxlength: 15,
+    lowercase: true,
     unique: true
   },
   email: {
     type: String,
-    required:true,
+    required:[true, 'Email cannot  be blank'],
     unique: true,
     minlength: 5,
     trim: true,
@@ -38,13 +39,13 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: [true, 'Password  cannot be blank'],
     minlength: 5,
     trim: true
   },
   isVerified: {
     type: Boolean,
-    required: true
+    default: false,
   },
   profile: {
     bio: {
@@ -86,7 +87,17 @@ const userSchema = new mongoose.Schema({
       from: Date,
       to: Date
     }]
-  } 
-});
+  },
+  roles: [{
+    role: {
+      type: String,
+      minlength: 3
+    },
+    assignedOn: {
+      type: Date,
+      default:   new Date()
+    }
+  }]
+}, {timestamps: true});
 
 export default mongoose.model('Users', userSchema);
