@@ -20,18 +20,6 @@ const answerSchema = mongoose.Schema({
     minlength: 5,
     required: true
   },
-  kudos: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users'
-  }],
-  hearts: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users'
-  }],
-  downs: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users'
-  }],
   createdAt: {
     type: Date,
     required: true
