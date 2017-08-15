@@ -16,7 +16,7 @@ beforeEach((done) => {
 });
 
 describe('Creating Users', () => {
-  it('Should save a user',()=> {
+  it('Should save a user',(done)=> {
     // create a user 
     const john = new Users({
       name: 'Jhon Doe',
@@ -27,7 +27,8 @@ describe('Creating Users', () => {
     });
     
     john.save().then((data) => {
-      expect(!john.isNew).toBeFalsy();
+      expect(john.isNew).toBeFalsy();
+      done();
     }).catch((err) => {
       // console.log(err);
     });    
