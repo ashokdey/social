@@ -4,8 +4,8 @@
   "description": "Simple social network API using Nodejs + MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "mongod" : "mongod --dbpath=C:/Users/007/mongo-db",
+    "test": "export NODE_ENV=test || set \"NODE_ENV=test\" && mocha --compilers js:babel-core/register ./app/tests/all.test.js",
+    "mongod": "mongod --dbpath=C:/Users/007/mongo-db",
     "dev": "nodemon server.js"
   },
   "keywords": [],
@@ -17,10 +17,13 @@
     "express": "^4.15.4",
     "express-graphql": "^0.6.7",
     "graphql": "^0.10.5",
+    "mongodb": "^2.2.31",
     "mongoose": "^4.11.6"
   },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1"
+    "babel-preset-stage-0": "^6.24.1",
+    "expect": "^1.20.2",
+    "mocha": "^3.5.0"
   }
 }

@@ -42,10 +42,6 @@ const userSchema = new mongoose.Schema({
     minlength: 5,
     trim: true
   },
-  followers: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Users'
-  }],
   isVerified: {
     type: Boolean,
     required: true
