@@ -24,7 +24,6 @@ if(environment === 'development'){
 else if(environment === 'test'){
   process.env.PORT = 8000;
   process.env.MONGODB_URI = 'mongodb://127.0.0.1:27017/QuriousTest';
-  console.log('***DATABASE :', process.env.MONGODB_URI);
 }
 
 console.log('***Working environment is: ', environment);

@@ -21,7 +21,7 @@ const connectionOptions = {
 mongoose.connect(process.env.MONGODB_URI, connectionOptions);
 
 // console log on connection to DB
-mongoose.connection.on('connected', () => console.log('Connected to Database'));
+// mongoose.connection.on('connected', () => console.log('Connected to Database'));
 
 // console log the error while connecting to the DB
 mongoose.connection.on('error', (error) => console.log('**ERROR in connecting to db. Error: ', error));

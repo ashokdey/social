@@ -1,7 +1,19 @@
-
+import mongoose from 'mongoose';
 import expect  from 'expect';
 import Users from '../models/User';
 import db from '../db/db';
+
+/**
+ * create a hook to empty the Database berfore 
+ * running any  test 
+ * empty the DB again after the tests are complete
+ */
+
+beforeEach((done) => {
+  mongoose.connection.collections.users.drop(() => {
+    done();
+  });
+});
 
 describe('Creating Users', () => {
   it('Should save a user',()=> {
@@ -15,9 +27,9 @@ describe('Creating Users', () => {
     });
     
     john.save().then((data) => {
-      console.log(data);
+      expect(!john.isNew).toBeFalsy();
     }).catch((err) => {
-      console.log(err);
+      // console.log(err);
     });    
 
   });
